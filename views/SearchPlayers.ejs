@@ -1,0 +1,330 @@
+<html>
+<head>
+<title>Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="CSS/navigation.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<style>
+.t01 tr:nth-child(even)
+ {
+ background-color:#f9c1a4;
+ }
+  .t01 tr:nth-child(odd)
+ {
+ background-color:#fffdd0;
+ }
+ .ths
+ {
+ font-family:'Source Sans Pro', sans-serif;
+ font-size:25px;
+ color:black;
+ background-color:#a9a9b0;
+ padding:1%;
+ }
+ .tds
+ {
+ font-family:'Source Sans Pro', sans-serif;
+ font-size:20px;
+ color:#000066;
+  text-align:center;
+  font-weight:bold;
+  padding:1%;
+ }
+#navbar
+{
+right:380px;
+}
+.search_box
+{
+background-color:#2f3640;
+}
+.btn
+{
+color:white;
+border:none;
+cursor:pointer;
+background-color:#2f3640;
+}
+.search_box:hover .btn 
+{
+background-color:grey;
+border-radius:50%;
+}
+.search_box:hover .src
+{
+margin-top:20%;
+}
+#1stdiv
+{
+ color:black;
+ width:100%;
+ }
+ .name
+ {
+ color:white;
+ font-weight: bold;
+ font-family: 'Source Sans Pro', sans-serif; 
+ font-size:25px;
+ }
+ .role
+ {
+ margin-left:3%;
+ }
+ .namcol
+ {
+ color:orange;
+ }
+ .hov:hover
+ {
+ transform:scale(1.1);
+ }
+ #headbar
+ {
+ position:fixed;
+ background-color:black;
+ right:0%;
+ width:100%;
+ top:0px;
+ height:100px;
+ z-index:1100;
+ }
+ #defend
+{
+	position:relative;
+	width:70%;
+	height:500px;
+	background-color:white;
+	top:-20px;
+	left:25%;
+	z-index:-10;
+}
+#navbar ul li:hover
+{
+background-color:white;
+color:black;
+}
+.black:hover .anchor
+{
+color:black;
+}
+.anchor
+{
+text-decoration:none;
+color:white;
+}
+#anch
+{
+color:white;
+text-decoration:none;
+}
+.white:hover #anch
+{
+color:black;
+}
+    	.socialmedia.fa
+{
+    position: relative;
+    padding: 10px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    left:450px;
+    text-decoration: none;
+    color: white;
+    margin: 0px;
+}
+   	
+        .menudropdown
+        {
+            position: relative;
+            top:-8px;
+            left:50px;
+            width: 80%;
+            height: 50px;
+            margin: 0px auto;
+            background:black;
+            z-index:999;
+        }
+        .menudropdown ul
+        {
+            padding: 0px;
+            margin: 0px;
+            background:black;
+        }
+        .menudropdown ul li
+        {
+            float:left;
+            color:white;
+            font: bold;
+            width: 230px;
+            height: 50px;
+            line-height: 50px;
+            list-style: none;
+            font-size:20px;
+            text-align: center;
+            font-family: Georgia;
+            background:black;
+        }
+        .menudropdown ul li ul
+        {
+            display: none;
+        }
+        .menudropdown ul li:hover > ul
+        {
+            display: block;
+            background:black;
+        }
+        .menudropdown ul li ul li:hover
+        {
+            background-color: #004D98;
+            cursor: pointer;
+        }
+        .menudropdown ul li:hover
+        {
+            background-color:#004D98;
+            cursor: pointer;
+        }
+        .menudropdown ul li ul li
+        {
+            position: relative;
+            
+        }
+        .menudropdown ul li ul li ul
+        {
+            position: absolute;
+            left:230px;
+            top:0px;
+        }
+        .menudropdown a
+        {
+            text-decoration: none;
+            color: white;
+        }
+       .foot:hover  #kab
+       {
+       color:black;
+       }
+       #kab
+       {
+       color:white;
+       }
+       .prof
+{
+	box-sizing:border-box;
+	border-radius:20px;
+	overflow:hidden;
+	box-shadow:0 30px 30px rgba(0,0,0,.5);	
+}
+ .viewprof
+ {
+ color:#000066;
+ }  
+ .viewprof:hover
+ {
+ color:blue;
+ }      
+    </style>
+    <script>
+    var bleep1=new Audio();
+    bleep1.src="tick3.mp3";
+</script>
+</head>
+<body bgcolor="black">
+    <div style="position:relative; top:0%; left:0%;height:200px;width:220px;background-color:black;z-index:1200;">
+        <img src="Pictures/logo.png.png" width="100%" height="100%" alt="logo" />
+      </div>
+      <div id="headbar">
+        <div id="navbar">
+          <ul>
+            <li class="foot" onmouseover="bleep1.play()"><a href="/Homepage" style="text-decoration:none;"
+                id="kab">Home</a></li>
+            <li class="foot" onmouseover="bleep1.play()"><a href="/MainPage#bookmark1" style="text-decoration:none;color:#ff5722;" id="kab">Players</a>
+              <ul class="drop">
+                <li class="black"><a class="anchor" href="/Rahul">Rahul Chaudhary</a>
+                </li>
+                <li class="black"><a href="/Pardeep" class="anchor">Pardeep Narwal</a>
+    
+                </li>
+    
+                <li class="black"><a class="anchor" href="/Manjeet">Manjeet Chillar</a>
+    
+                </li>
+                
+              </ul>
+            </li>
+            <li class="foot" onmouseover="bleep1.play()"><a href="/MainPage#bookmark2" style="text-decoration:none;" id="kab">Teams</a>
+              <ul class="drop">
+                <li class="black"><a class="anchor" href="/u_mumba">U Mumba</a>
+    
+                </li>
+                <li class="black"><a href="/DabangDelhi" class="anchor">Dabang Delhi</a>
+    
+                </li>
+                <!--<li class="black"><a href="search.jsp" class="anchor">Player Search</a></li>-->
+                <li class="black"><a class="anchor" href="/bengaluru">Bengaluru Bulls</a>
+    
+                </li>
+              
+              </ul>
+            </li>
+            <li class="foot" onmouseover="bleep1.play()"><a href="#" style="text-decoration:none;"
+                id="kab">Tournaments</a>
+              <ul class="drop">
+                <li class="black"><a class="anchor" href="/VivoProKabaddi">Vivo PKL</a>
+    
+                </li>
+                <li class="black"><a href="/worldCup" class="anchor">World Cup</a>
+    
+                </li>
+              </ul>
+            </li>
+        </div>
+        <div class="search_box">
+          <form action="/SearchPlayers" method="post">
+            <input class="input_box" type="text" name="plname" placeholder="Search" autocomplete="off" required />
+            <button class=" btn" style="position:relative;">
+              <i class="fa fa-search" aria-hidden="true"></i></i>
+          </form>
+        </div>
+        <div class="profile">
+          <a class="icon" href="">
+            <i class="fa fa-user"></i>
+          </a>
+          <ul>
+            <li onmouseover="bleep1.play()"><a href="/ViewProfile" style="color:black;text-decoration:none;">View
+                Profile</a></li>
+            <li onmouseover="bleep1.play()"><a href="/ChangePass" style="color:black;text-decoration:none;">Change
+                Password</a></li>
+            <li onmouseover="bleep1.play()">
+              <form action="/Logout">
+                <input type="submit" value="Logout"
+                  style="border:none;font-size:16px;cursor: pointer;color:black;width:120px;background-color:white;margin-top:2px;line-height:40px;text-align:center;font-size:16px;border-radius:20px;">
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <% var Players=[];%>
+      <%Players=searched;%>
+      <table class="t01 prof" border="1px" cellspacing="0px" cellpadding="3px" bgcolor="lightblue" style="background-color:pink;width:90%;margin-top:3%;margin-left:5%;margin-bottom:2%;text-align:center;">
+      
+      <tr>
+      <th class="ths">Player Name</th>
+      <th class="ths">Country</th>
+      <th class="ths">Sports</th>
+      <th class="ths">Link</th>
+      </tr>
+      <% for(var doc of Players) { %>
+      <tr>
+      <td class="tds"><%=doc.pname %></td>
+      <td class="tds"><%=doc.country %></td>
+      <td class="tds"><%=doc.sports %></td>
+      <td class="tds"><a class="viewprof"  href=<%=doc.link %>>View Profile</a></td>
+      </tr>
+      <% } %>	
+      </table>
+      </body>
+      </html>

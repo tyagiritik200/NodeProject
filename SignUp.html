@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="CSS/loginStyle.css">
+    <script type="text/javascript" src="app.js" ></script>
+    <style>
+        body {
+            background: url(Pictures/bg1.jpg);
+        }
+
+        .login-box input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container login-box">
+        <img src="Pictures/avatar.png" class="avatar">
+        <h1>Sign Up</h1>
+        <form action="./SignUp.html" method="POST">
+            <p>Username</p>
+            
+            <input type="text" pattern="[A-Za-z][A-Za-z0-9].{3,}" name="uname" placeholder="Enter Username"
+                title="minimum 5 char and first char must be alphabet and username must be unique" autocomplete="off"
+                required />
+            <p>Phone Number</p>
+            <input type="tel" pattern="[0-9]{10}" name="phno" placeholder="Enter Phone No."
+                title="must contain 10 digits only" autocomplete="off" required />
+            <p>Email</p>
+            <input type="email" pattern="([a-z0-9\._%+-]{3,})@([a-z\d_]{4,})\.([a-z]{2,4})$" name="email"
+                placeholder="Enter Email" title="enter valid e-mail" autocomplete="off" required />
+            <p>Password</p>
+            <input type="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%&*^!]).{8,}" name="pass"
+                placeholder="Enter Password"
+                title="minimum 8 char and must contain atleast 1 Uppercase,1 Lowercase,1 digit and 1 special char"
+                required />
+            <button type="submit" name="submit" style="margin-top:20px;">Join Now</button>
+        </form>
+        <br />
+        <a id="acc" href="Login.html">Already have an account ?</a>
+    </div>
+
+</body>
+
+</html>

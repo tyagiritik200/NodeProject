@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="navigation.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<style>
+.t01 tr:nth-child(even)
+ {
+ background-color:#f9c1a4;
+ }
+  .t01 tr:nth-child(odd)
+ {
+ background-color:#fffdd0;
+ }
+ .ths
+ {
+ font-family:'Source Sans Pro', sans-serif;
+ font-size:25px;
+ color:black;
+ background-color:#a9a9b0;
+ padding:1%;
+ }
+ .tds
+ {
+ font-family:'Source Sans Pro', sans-serif;
+ font-size:20px;
+ color:#000066;
+  text-align:center;
+  font-weight:bold;
+  padding:1%;
+ }
+ .prof
+{
+	box-sizing:border-box;
+	border-radius:20px;
+	overflow:hidden;
+	box-shadow:0 15px 15px rgba(0,0,0,.5);	
+}
+ .viewprof
+ {
+ color:#000066;
+ }  
+ .viewprof:hover
+ {
+ color:blue;
+ }  
+    </style>
+</head>
+<body>
+	<div style="position:relative;top:15px;">
+<fieldset class="playerstat" style="border-radius:20px;width:400px;height:100px;margin-left:3%;border-color:#1d7cf2;position:relative;left:35%;"><legend></legend>
+<fieldset class="playerstat" style="border-radius:20px;width:380px;height:80px;margin-top:2px;margin-left:8px;background-color:#a9a9b0;border-color:#a9a9b0;"><legend></legend>
+<p style="font-size:40px;color:#000066; text-align:center; margin-top:16px;font-family:'Source Sans Pro', sans-serif;" ><b>USERS DETAILS</b></p>
+</fieldset>
+</fieldset>
+</div>	 
+<% var Users=[];%>
+<%Users=items;%>
+<table class="t01 prof" border="1px" cellspacing="0px" cellpadding="3px" bgcolor="lightblue" style="background-color:pink;width:90%;margin-top:3%;margin-left:5%;text-align:center;">
+<tr>
+<th class="ths">Username</th>
+<th class="ths">E-mail</th>
+<th class="ths">Mobile No.</th>
+</tr>
+<% for(var doc of Users) { %>
+<tr>
+<td class="tds"><%=doc.uname %></td>
+<td class="tds"><%=doc.email %></td>
+<td class="tds"><%=doc.phno %></td>
+</tr>
+<% } %>
+</table>
+</body>
+</html>

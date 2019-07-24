@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Kabaddi kabaddi</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="CSS/navigation.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <script>
+    var bleep1 = new Audio();
+    bleep1.src = "tick3.mp3";
+  </script>
+  <style>
+    #navbar {
+      right: 380px;
+    }
+
+    .search_box {
+      background-color: #2f3640;
+    }
+
+    .btn {
+      color: white;
+      background-color: #2f3640;
+      border: none;
+      cursor: pointer;
+    }
+
+    .search_box:hover .btn {
+      background-color: grey;
+      border-radius: 50%;
+    }
+
+    #1stdiv {
+      color: black;
+      width: 100%;
+    }
+
+    .name {
+      color: white;
+      font-weight: bold;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 25px;
+    }
+
+    .role {
+      margin-left: 3%;
+    }
+
+    .namcol {
+      color: orange;
+    }
+
+    .hov:hover {
+      transform: scale(1.1);
+    }
+
+    #headbar {
+      position: fixed;
+      background-color: black;
+      right: 0%;
+      width: 100%;
+      top: 0px;
+      height: 100px;
+      z-index: 1100;
+    }
+
+    #defend {
+      position: relative;
+      width: 70%;
+      height: 500px;
+      background-color: white;
+      top: -50px;
+      left: 25%;
+      z-index: -10;
+    }
+
+    #navbar ul li:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .black:hover .anchor {
+      color: black;
+    }
+
+    .anchor {
+      text-decoration: none;
+      color: white;
+    }
+
+    #anch {
+      color: white;
+      text-decoration: none;
+    }
+
+    .white:hover #anch {
+      color: black;
+    }
+
+    .foot:hover #kab {
+      color: black;
+    }
+
+    #kab {
+      color: white;
+    }
+  </style>
+</head>
+
+<body bgcolor="black">
+  <div style="position:relative; top:0%; left:0%;height:200px;width:220px;background-color:black;z-index:1200;">
+    <img src="Pictures/logo.png.png" width="100%" height="100%" alt="logo" />
+  </div>
+  <div id="headbar">
+    <div id="navbar">
+      <ul>
+        <li class="foot" onmouseover="bleep1.play()"><a href="/MainPage" style="text-decoration:none;color:#ff5722;"
+            id="kab">Home</a></li>
+        <li class="foot" onmouseover="bleep1.play()"><a href="#bookmark1" style="text-decoration:none;" id="kab">Players</a>
+          <ul class="drop">
+            <li class="black"><a class="anchor" href="/Rahul">Rahul Chaudhary</a>
+            </li>
+            <li class="black"><a href="/Pardeep" class="anchor">Pardeep Narwal</a>
+
+            </li>
+
+            <li class="black"><a class="anchor" href="/Manjeet">Manjeet Chillar</a>
+
+            </li>
+            
+          </ul>
+        </li>
+        <li class="foot" onmouseover="bleep1.play()"><a href="#bookmark2" style="text-decoration:none;" id="kab">Teams</a>
+          <ul class="drop">
+            <li class="black"><a class="anchor" href="/u_mumba">U Mumba</a>
+
+            </li>
+            <li class="black"><a href="/DabangDelhi" class="anchor">Dabang Delhi</a>
+
+            </li>
+            <!--<li class="black"><a href="search.jsp" class="anchor">Player Search</a></li>-->
+            <li class="black"><a class="anchor" href="/bengaluru">Bengaluru Bulls</a>
+
+            </li>
+          
+          </ul>
+        </li>
+        <li class="foot" onmouseover="bleep1.play()"><a href="#" style="text-decoration:none;"
+            id="kab">Tournaments</a>
+          <ul class="drop">
+            <li class="black"><a class="anchor" href="/VivoProKabaddi">Vivo PKL</a>
+
+            </li>
+            <li class="black"><a href="/worldCup" class="anchor">World Cup</a>
+
+            </li>
+          </ul>
+        </li>
+    </div>
+    <div class="search_box">
+      <form action="/SearchPlayers" method="post">
+        <input class="input_box" type="text" name="plname" placeholder="Search" autocomplete="off" required />
+        <button class=" btn" style="position:relative;">
+          <i class="fa fa-search" aria-hidden="true"></i></i>
+      </form>
+    </div>
+    <div class="profile">
+      <a class="icon" href="">
+        <i class="fa fa-user"></i>
+      </a>
+      <ul>
+        <li onmouseover="bleep1.play()"><a href="/ViewProfile" style="color:black;text-decoration:none;">View
+            Profile</a></li>
+        <li onmouseover="bleep1.play()"><a href="/ChangePass" style="color:black;text-decoration:none;">Change
+            Password</a></li>
+        <li onmouseover="bleep1.play()">
+          <form action="/Logout">
+            <input type="submit" value="Logout"
+              style="border:none;font-size:16px;cursor: pointer;color:black;width:120px;background-color:white;margin-top:2px;line-height:40px;text-align:center;font-size:16px;border-radius:20px;">
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="defend">
+    <img src="kabaddi\4.jpg" alt="kabaddi" width="100%" height="100%">
+  </div>
+  <div id="1stdiv"
+    style=" background-color:black; width:95%; margin-left:2%; margin-top:10%; margin-bottom:1%; height:400px;">
+    <div id="league" style=" background-color:black; width:40%; margin-left:2%; margin-top:1%; height:350px;">
+      <img src="kabaddi\6.jpg" alt="kabaddi" width="100%" height="100%">
+    </div>
+    <div id="1stwrite"
+      style=" background-color:black; width:45%; float:right; margin-right:2%; margin-top:-24.3%; height:350px;">
+      <p
+        style="font-size: 55px;font-family: 'Source Sans Pro', sans-serif; color:white; margin-top:3%; text-align:justify; margin-left:11%;">
+        Indian National Team </p>
+      <p style="font-size: 25px; color:white; margin-top:2%; text-align:justify;"><span
+          style="font-size: 25px; font-family: 'Source Sans Pro', sans-serif;color: white; line-height:1.5;">The Indian
+          national Kabaddi side is by far the most successful national kabaddi side of any country.
+          India have won gold medals in the sport in all the Asian Games till date starting from 1990 in Beijing.
+          India have also won all the World Cups held in the sport which shows the dominance exerted by the team in this
+          sport.
+          In 2017, India won the Asian Kabaddi Championship led by raider Ajay Thakur.</span></p>
+    </div>
+  </div>
+
+  <div id="1stdiv"
+    style=" background-color:black; width:95%; margin-left:2%; margin-top:10%; margin-bottom:1%; height:400px;">
+    <div id="league" style=" background-color:black; width:40%; margin-left:2%; margin-top:1%; height:350px;">
+      <p
+        style="font-size: 55px;font-family: 'Source Sans Pro', sans-serif; color:white; margin-top:3%; text-align:justify; margin-left:5%;">
+        Pro Kabaddi League</p>
+      <p
+        style="font-size: 25px; color:white;font-family: 'Source Sans Pro', sans-serif; margin-top:3%; text-align:justify;">
+        <span style="font-size: 25px; color: white; line-height:1.5;">Pro Kabaddi, a first significant initiative of
+          Mashal Sports, takes our truly indigenous sport of Kabaddi to levels of new professionalism.
+          It is currently known as Vivo Pro Kabaddi League for sponsorship purpose, is a professional-level Kabaddi
+          league in India.The format of the competition was influenced by Indian Premier League</span>
+        <span id="bookmark1" style="font-size: 25px; color: white; line-height:1.5;">It was launched in 2014 and is
+          broadcast on Star Sports.</span></p>
+    </div>
+    <div id="1stwrite"
+      style=" background-color:black; width:45%; float:right; margin-right:2%; margin-top:-24.3%; height:350px;">
+      <!--<img width="100%" height="100%" src="kabaddi\1.jpg">-->
+      <video id="videoId" width="100%" height="100%" controls>
+        <!--id="1stwrite"-->
+        <source src="Videos/pro_new.webm" type="video/webm" allowfullscreen autoplay loop muted>
+      </video>
+    </div>
+    <p
+      style="color:white; font-weight: bold; font-family: 'Source Sans Pro', sans-serif; font-size:35px; margin-top:7%; margin-left:40%;">
+      PLAYERS IN FOCUS</p>
+    <div style=" background-color:black; width:95%; margin-left:2%; margin-top:2%; margin-bottom:1%; height:400px;">
+      <div style=" background-color:black; width:22%; margin-left:2%; margin-top:1%; height:400px;">
+        <a href="/Pardeep" style="text-decoration:none;">
+          <img class="hov" src="kabaddi\Pardeep-Narwal.png" alt="kabaddi" width="100%" height="80%">
+          <p class="role" style="margin-top:2%;"><span class="name namcol">Name :</span><span class="name"
+              style="margin-left:6%; line-height:2">Pardeep Narwal</span></p>
+          <p class="role"><span class="name namcol">Role :</span><span class="name"
+              style="margin-left:10.5%;">Raider</span></p>
+        </a>
+      </div>
+      <span
+        style=" background-color:black; width:22%; float:right; margin-right:2.5%; margin-top:-28%; height:400px; position:relative; top:-4%">
+        <a href="/Rahul" style="text-decoration:none;">
+          <img class="hov" src="kabaddi\Rahul-Chaudhari.png" alt="kabaddi" width="100%" height="80%">
+          <p class="role" style="margin-top:2%;"><span class="name namcol">Name:</span><span class="name"
+              style="margin-left:2%; line-height:2">Rahul Chaudhary</span></p>
+          <p class="role"><span class="name namcol">Role :</span><span class="name"
+              style="margin-left:4.5%;">Raider</span></p>
+        </a>
+      </span>
+      <span
+        style=" background-color:black; width:22%; float:right;margin-left:0.5%; margin-right:2.5%; margin-top:-29.15%; height:400px;">
+        <a href="/Manjeet" style="text-decoration:none;">
+          <img class="hov" src="kabaddi\manjeet.png" alt="kabaddi" width="100%" height="80%">
+          <p class="role" style="margin-top:2%;"><span class="name namcol">Name :</span><span class="name"
+              style="margin-left:6%; line-height:2">Manjeet Chillar</span></p>
+          <p class="role"><span class="name namcol">Role :</span><span class="name"
+              style="margin-left:10.5%;">All-Rounder</span></p>
+        </a>
+      </span>
+      <div style=" background-color:black; width:22%; float:right; margin-right:2%; margin-top:-29.15%; height:400px;">
+        <a href="/Sandeep" style="text-decoration:none;">
+          <img class="hov" src="kabaddi\Sandeep-Narwal.png" alt="kabaddi" width="100%" height="80%">
+          <p class="role" style="margin-top:2%;"><span class="name namcol">Name :</span><span class="name"
+              style="margin-left:5%; line-height:2">Sandeep Narwal</span></p>
+          <p class="role"><span class="name namcol">Role :</span><span id="bookmark2" class="name"
+              style="margin-left:9.5%;">All-Rounder</span></p>
+        </a>
+      </div>
+    </div>
+
+
+    <p
+      style="color:white; font-weight: bold; font-family: 'Source Sans Pro', sans-serif; font-size:35px; margin-top:7%; margin-left:40%;">
+      TEAMS IN FOCUS</p>
+    <div style=" background-color:black; width:95%; margin-left:2%; margin-top:2%; margin-bottom:1%; height:400px;">
+      <div style=" background-color:black; width:22%; margin-left:2%; margin-top:1%; height:400px;">
+        <a href="/bengaluru" style="text-decoration:none;"><img class="hov" src="kabaddi\bengalurulogo.png"
+            alt="kabaddi" width="100%" height="80%"></a>
+        <a href="/bengaluru" style="text-decoration:none;">
+          <p class="role" style="margin-top:2%;"><span class="name namcol">Name :</span><span class="name"
+              style="margin-left:6%; line-height:2">Bengaluru Bulls</span></p>
+        </a>
+        <p class="role"><span class="name namcol">Owner :</span><span class="name" style="margin-left:3%;">Kosmik
+            Global</span></p>
+      </div>
+      <span
+        style=" background-color:black; width:22%; float:right; margin-right:2.5%; margin-top:-28%; height:400px; position:relative; top:-4%">
+        <a href="/telugu_titans" style="text-decoration:none;"><img class="hov" src="kabaddi\telugu.png" alt="kabaddi"
+            width="100%" height="80%"></a>
+        <a href="/telugu_titans" style="text-decoration:none;">
+          <p class="role" style="margin-top:2%;"><span class="name namcol">Name :</span><span class="name"
+              style="margin-left:10%; line-height:2">Telugu Titans</span></p>
+        </a>
+        <p class="role"><span class="name namcol">Owner :</span><span class="name" style="margin-left:8%;">Veera
+            Sports</span></p>
+      </span>
+      <span
+        style=" background-color:black; width:22%; float:right;margin-left:0.5%; margin-right:2.5%; margin-top:-29.15%; height:400px;">
+        <a href="/u_mumba" style="text-decoration:none;"><img class="hov" src="kabaddi\u-mumba.png" alt="kabaddi"
+            width="100%" height="80%"></a>
+        <a href="/u_mumba" style="text-decoration:none;">
+          <p class="role" style="margin-top:2%;"><span class="name namcol">Name :</span><span class="name"
+              style="margin-left:6%; line-height:2">U Mumba</span></p>
+        </a>
+        <p class="role"><span class="name namcol">Owner :</span><span class="name" style="margin-left:4%;">Unilazer
+            Sports</span></p>
+      </span>
+      <div style=" background-color:black; width:22%; float:right; margin-right:2%; margin-top:-29.15%; height:400px;">
+        <a href="/DabangDelhi" style="text-decoration:none;"><img class="hov" src="kabaddi\delhi.png" alt="kabaddi"
+            width="100%" height="80%"></a>
+        <a href="/DabangDelhi" style="text-decoration:none;">
+          <p class="role" style="margin-top:2%;"><span class="name namcol">Name :</span><span class="name"
+              style="margin-left:10%; line-height:2">Dabang Delhi</span></p>
+        </a>
+        <p class="role"><span class="name namcol">Owner :</span><span class="name" style="margin-left:7%;">Radha
+            Kapoor</span></p>
+      </div>
+    </div>
+    <hr style="color:white; width:60%; position:relative; left:20%; margin-top:5%;" />
+    <div style=" background-color:black; width:95%; margin-left:2%;margin-top:6%; margin-bottom:1%; height:200px;">
+      <span
+        style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:white; position:relative; left:15%; top:-2.5%">Sanctioned
+        By</span>
+      <span
+        style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:white; position:relative; left:36.5%; top:-2.5%;">Managed
+        By</span>
+      <p
+        style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:white; position:relative; left:78%; top:-22%">
+        Broadcast Partners</p>
+      <img class="hov" src="kabaddi\AKF.png" style="position:relative; left:8%;top:5%;">
+      <img class="hov" src="kabaddi\COI.png" style="position:relative; left:11%;top:5%;">
+      <img class="hov" src="kabaddi\IKF.png" style="position:relative; left:14%;top:5%;">
+      <img class="hov" src="kabaddi\mashal.png" style="position:relative; left:26%;top:5%;">
+      <img class="hov" src="kabaddi\star.png" style="position:relative; left:45%;top:5%;">
+    </div>
+    <div id="end">
+      <hr />
+      <a href="#" id="facebook" class="fa fa-facebook socialmedia"></a>
+      <a id="twitter" class="socialmedia fa fa-twitter" href="#"></a>
+      <a id="google" class="socialmedia fa fa-google" href="#"></a>
+      <a id="linked" class="socialmedia fa fa-linkedin" href="#"></a>
+      <a id="youtube" class="socialmedia fa fa-youtube" href="#"></a>
+      <a id="insta" class="socialmedia fa fa-instagram" href="#"></a>
+      <div id="about">
+        <pre
+          style="line-height: 40px"><span style="position: relative; left:384px;font-size:20px; word-spacing: 12px ;color: dodgerblue">ABOUT  ARCHIVE  PRIVACY  TERMS  CONTACT</span>
+<span style="position: relative; left:350px;font-size:20px; color:white">  Watchr Media  Cassius Network  All rights reserved</span></pre>
+      </div>
+    </div>
+</body>
+
+</html>

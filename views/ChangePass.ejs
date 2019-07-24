@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+background:url("Pictures/bg1.jpg");
+}
+.prof
+{
+    z-index:999;
+	width:550px;
+	height:350px;
+	background:white;
+	box-sizing:border-box;
+	border-radius:20px;
+	overflow:hidden;
+	box-shadow:0 30px 30px rgba(0,0,0,.5);	
+}
+.prof p{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:25px;
+    color:black;
+}
+.prof input{
+    width: 100%;
+    position:absolute;
+    right:5%;
+   margin-top:-1.5%;
+}
+.prof input[type="text"], input[type="password"]
+{
+    border: 1px solid #707070;
+    border-radius:5px;
+    width:50%;
+    background: silver;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+}
+.prof button
+{
+    position: relative;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 200px;
+    top:20px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    left:25%;
+}
+.prof button:hover
+{
+    cursor: pointer;
+    background: skyblue;
+    color: #000;
+}
+.prof form
+{
+margin-top:7%;
+margin-left:5%;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Profile</title>
+</head>
+<body>
+<div class="prof" style="position:fixed;top:20%;left:30%;">
+<form action="/ChangePass" method="post">
+   <p>Username
+   <input type="text" name="uname" pattern="[A-Za-z][A-Za-z0-9].{3,}" placeholder="Enter Username"  title="minimum 5 char and first char must be alphabet and username must be unique" autocomplete="off" required/></p>
+   <br/><br/>
+   <p>Old Password
+   <input type="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%&*^!]).{8,}" name="oldpass" placeholder="Enter Old Password" title="minimum 8 char and must contain atleast 1 Uppercase,1 Lowercase,1 digit and 1 special char" required/></p>
+   <br/><br/>
+   <p>New Password
+   <input title="minimum 8 char and must contain atleast 1 Uppercase,1 Lowercase,1 digit and 1 special char" type="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%&*^!]).{8,}" name="newpass" placeholder="Enter New Password" required/></p>
+   <br/><br/>
+   <button type="submit" name="submit">Change Password</button>
+</form>
+</div>
+</body>
+</html>

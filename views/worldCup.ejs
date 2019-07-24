@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>WorldCup</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="CSS/navigation.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <style>
+        #navbar {
+            right: 380px;
+        }
+
+        .hov:hover {
+            transform: scale(1.1);
+        }
+
+        #headbar {
+            position: fixed;
+            background-color: white;
+            right: 0%;
+            width: 100%;
+            top: 0px;
+            height: 100px;
+            z-index: 1100;
+        }
+
+        #navbar ul li {
+            background-color: #FF5722;
+            color: black;
+        }
+
+        #navbar ul li:hover {
+            background-color: white;
+        }
+
+        .search_box {
+            background-color: #2f3640;
+        }
+
+        .btn {
+            color: #ff5722;
+            border: none;
+            cursor: pointer;
+            background-color: #2f3640;
+        }
+
+        .search_box:hover .btn {
+            background-color: white;
+        }
+
+        .icon {
+            color: #ff5722;
+        }
+
+        .profile ul li {
+            color: white;
+            background-color: black;
+        }
+
+        #navbar ul li:hover {
+            background-color: #000066;
+            color: white;
+        }
+
+        .blackhov:hover .ahov {
+            color: white;
+            background-color: #000066;
+        }
+
+        .ahov {
+            color: black;
+            background-color: #ff5722;
+        }
+
+        .defend {
+            position: relative;
+            width: 80%;
+            height: 600px;
+            background-color: white;
+            top: 100px;
+            left: 10%;
+            z-index: -10;
+        }
+
+        .playerstat {
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        .stat {
+            height: 20%;
+            width: 30%;
+        }
+
+        .1stdiv {
+            color: yellow;
+            width: 100%;
+        }
+
+        .league1 {
+            background: url("Pictures/bg1.jpg");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .league {
+            background: url("Pictures/Tiranga.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .thp {
+            color: #1d7cf2;
+            font-size: 25px;
+            font-family: sans-serif, light-weight;
+        }
+
+        .tdp {
+            font-family: sans-serif, light-weight;
+            color: white;
+            font-size: 20px;
+        }
+
+        .th {
+            color: black;
+            font-size: 25px;
+            font-family: sans-serif, light-weight;
+        }
+
+        .td {
+            font-family: sans-serif, light-weight;
+            color: #000066;
+            font-size: 30px;
+        }
+
+        .ths {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 25px;
+            color: black;
+            background-color: #a9a9b0;
+        }
+
+        .tds {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 20px;
+            color: #000066;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .teamstat {
+            position: relative;
+            top: -15%;
+        }
+
+        .raidstat {
+            margin-top: -22%;
+        }
+
+        .t01 tr:nth-child(even) {
+            background-color: #f9c1a4;
+        }
+
+        .t01 tr:nth-child(odd) {
+            background-color: #fffdd0;
+        }
+
+        .hov:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        var bleep1 = new Audio();
+        bleep1.src = "tick3.mp3";
+    </script>
+</head>
+
+<body bgcolor="white">
+
+    <div style="position:fixed;height:100px;width:180px; top:0%; left:1%;background-color:white;z-index:1200;">
+        <img src="kabaddi/world_cup.png" width="100%" height="100%" alt="logo" />
+    </div>
+    <div id="headbar">
+        <div id="navbar">
+            <ul>
+                <li class="blackhov" onmouseover="bleep1.play()"><a class="ahov" href="/MainPage"
+                        style="text-decoration:none;">Home</a></li>
+                <li class="blackhov" onmouseover="bleep1.play()"><a class="ahov" href="/MainPage#bookmark1"
+                        style="text-decoration:none;">Players</a></li>
+                <li class="blackhov" onmouseover="bleep1.play()"><a class="ahov" href="/MainPage#bookmark2"
+                        style="text-decoration:none;">Teams</a></li>
+                <li class="blackhov" onmouseover="bleep1.play()"><a class="ahov" href="/MainPage"
+                        style="text-decoration:none;">Tournaments</a></li>
+            </ul>
+        </div>
+        <div class="search_box">
+            <form action="/SearchPlayers" method="post">
+                <input class="input_box" type="search" name="plname" placeholder="Search" autocomplete="off" required />
+                <button class=" btn" style="position:relative;">
+                    <i class="fa fa-search"></i>
+            </form>
+        </div>
+        <div class="profile">
+            <a class="icon" href="">
+                <i class="fa fa-user"></i>
+            </a>
+            <ul>
+                <li><a href="/ViewProfile" style="color:white;text-decoration:none;background-color:black;">View
+                        Profile</a></li>
+                <li><a href="/ChangePass" style="color:white;text-decoration:none;background-color:black;">Change
+                        Password</a></li>
+                <li>
+                    <form action="/Logout">
+                        <input type="submit" value="Logout"
+                            style="border:none;font-size:16px;cursor: pointer;color:white;width:120px;background-color:black;margin-top:2px;line-height:40px;text-align:center;font-size:16px;border-radius:20px;">
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="defend" style="margin-top: 10px;">
+        <img src="kabaddi\india_worldcup.jpg" width="100%" height="100%" alt="logo" />
+    </div>
+
+    <div class="1stdiv" style="width:95%; margin-left:2%; margin-top:13%; margin-bottom:1%; height:520px;">
+        <h2 class="th" style="font-size:30px ;margin-left:2%;color:#000066">ABOUT</h2>
+        <br />
+        <hr style="margin-left:2%;margin-right:2%; color:black;" />
+        <br />
+        <div class="league" style=" background-color:white; width:45%; margin-left:2%; margin-top:1%; height:400px;">
+            <p
+                style="color:black;font-size:25px;font-family:'Source Sans Pro', sans-serif;margin-left:2%;text-align:justify;margin-right:2%;line-height:1.5;">
+                The Kabaddi World Cup, is an indoor international kabaddi competition conducted by the International
+                Kabaddi Federation (IKF) in standard style, contested by men's and women's national teams.
+                The competition has been previously contested in 2004, 2007 and 2016. All the tournaments have been won
+                by India.
+                In 2016, the first Women's Kabaddi World Cup was held for women in India.
+                <br /><br />
+                The current format of the competition involves a round robin group stage, with 6 teams in 2 pools, with
+                the first and second place finishers of each group progressing to the semi-finals.
+            </p>
+        </div>
+        <div
+            style=" background-color:orange; width:45%; float:right; margin-right:2%; margin-top:-27.7%; height:400px;">
+            <table class="league1"
+                style="border-color:red;border-width:5px; background-color:black;width:100%;height:100%;">
+                <tr>
+                    <td class="thp">FOUNDED</td>
+                    <td class="tdp">2004</td>
+                </tr>
+                <tr>
+                    <td class="thp">REGION</td>
+                    <td class="tdp">International(IKF)</td>
+                </tr>
+                <tr>
+                    <td class="thp">NO. OF TEAMS </td>
+                    <td class="tdp">12</td>
+                </tr>
+                <tr>
+                    <td class="thp">CURRENT CHAMPION</td>
+                    <td class="tdp"><img src="kabaddi\Indian.png" /><br />INDIA</td>
+                </tr>
+                <tr>
+                    <td class="thp">MOST SUCCESSFUL TEAM</td>
+                    <td class="tdp"><img src="kabaddi\Indian.png" /><br />INDIA</td>
+            </table>
+        </div>
+    </div>
+    <div style="  background-color:white; width:90%; margin-left:5%; margin-top:10%; margin-bottom:1%; height:2500px;">
+        <h2 class="th" style="font-size:30px ;margin-left:2%;color:#000066">STATS</h2>
+        <br />
+        <hr style="margin-left:2%;margin-right:2%; color:black;" />
+        <br />
+
+
+        <div style="width:100%;height:30%;background-color:white;position:relative;top:0%;">
+            <fieldset class="playerstat"
+                style="width:400px;height:150px;margin-left:3%;border-color:#1d7cf2;position:relative;left:35%;">
+                <legend></legend>
+                <fieldset class="playerstat"
+                    style="width:380px;height:130px;margin-top:8px;margin-left:8px;background-color:#a9a9b0;border-color:#a9a9b0;">
+                    <legend></legend>
+                    <p
+                        style="font-size:50px;color:#000066; text-align:center; margin-top:0px;font-family:'Source Sans Pro', sans-serif;">
+                        <b>TOURNAMENT RESULTS</b></p>
+                </fieldset>
+            </fieldset>
+
+            <br />
+            <table class="t01" border="1px" cellspacing="0px" cellpadding="3px" bgcolor="lightblue"
+                style="background-color:pink;width:90%;height:90%;margin-top:3%;margin-left:5%;text-align:center">
+                <tr>
+                    <th class="ths">Year</th>
+                    <th class="ths">Host</th>
+                    <th class="ths">Champions</th>
+                    <th class="ths">Score</th>
+                    <th class="ths">Runner-Up</th>
+
+                </tr>
+                <tr>
+                    <td class="tds">2004</td>
+                    <td class="tds"><img src="kabaddi\Indian.png" /><br />Mumbai, India</td>
+                    <td class="tds"><img src="kabaddi\Indian.png" /><br />India</td>
+                    <td class="tds">55-27</td>
+                    <td class="tds"><img src="kabaddi\Iran.png" /><br />Iran</td>
+                </tr>
+                <tr>
+                    <td class="tds">2007</td>
+                    <td class="tds"><img src="kabaddi\Indian.png" /><br />Panvel, India</td>
+                    <td class="tds"><img src="kabaddi\Indian.png" /><br />India</td>
+                    <td class="tds">29-19</td>
+                    <td class="tds"><img src="kabaddi\Iran.png" /><br />Iran</td>
+                </tr>
+                <tr>
+                    <td class="tds">2016</td>
+                    <td class="tds"><img src="kabaddi\Indian.png" /><br />Ahmedabad, India</td>
+                    <td class="tds"><img src="kabaddi\Indian.png" /><br />India</td>
+                    <td class="tds">38-29</td>
+                    <td class="tds"><img src="kabaddi\Iran.png" /><br />Iran</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div style="width:100%;height:30%;background-color:white;position:relative;top:10%;">
+            <fieldset class="playerstat"
+                style="width:400px;height:100px;margin-left:3%;border-color:#1d7cf2;position:relative;left:35%;">
+                <legend></legend>
+                <fieldset class="playerstat"
+                    style="width:380px;height:80px;margin-top:8px;margin-left:8px;background-color:#a9a9b0;border-color:#a9a9b0;">
+                    <legend></legend>
+                    <p
+                        style="font-size:50px;color:#000066; text-align:center; margin-top:5px;font-family:'Source Sans Pro', sans-serif;">
+                        <b>MEDAL TABLE</b></p>
+                </fieldset>
+            </fieldset>
+
+            <br />
+            <table class="t01" border="1px" cellspacing="0px" cellpadding="3px" bgcolor="lightblue"
+                style="background-color:pink;width:90%;height:90%;margin-top:3%;margin-left:5%;text-align:center">
+                <tr>
+                    <th class="ths">Rank</th>
+                    <th class="ths">Nation</th>
+                    <th class="ths">Gold</th>
+                    <th class="ths">Silver</th>
+                    <th class="ths">Bronze</th>
+                    <th class="ths">Total</th>
+                </tr>
+                <tr>
+                    <td class="tds">1</td>
+                    <td class="tds"><img src="kabaddi\Indian.png" /><br />India</td>
+                    <td class="tds">3</td>
+                    <td class="tds">0</td>
+                    <td class="tds">0</td>
+                    <td class="tds">3</td>
+                </tr>
+                <tr>
+                    <td class="tds">2</td>
+                    <td class="tds"><img src="kabaddi\Iran.png" /><br />Iran</td>
+                    <td class="tds">0</td>
+                    <td class="tds">3</td>
+                    <td class="tds">0</td>
+                    <td class="tds">3</td>
+                </tr>
+                <tr>
+                    <td class="tds">3</td>
+                    <td class="tds"><img src="kabaddi\Bangladesh.png" /><br />Bangladesh</td>
+                    <td class="tds">0</td>
+                    <td class="tds">0</td>
+                    <td class="tds">2</td>
+                    <td class="tds">2</td>
+                </tr>
+                <tr>
+                    <td class="tds" rowspan="4">4</td>
+                    <td class="tds"><img src="kabaddi\Canada.png" /><br />Canada</td>
+                    <td class="tds">0</td>
+                    <td class="tds">0</td>
+                    <td class="tds">1</td>
+                    <td class="tds">1</td>
+                </tr>
+                <tr>
+
+                    <td class="tds"><img src="kabaddi\Japan.png" /><br />Japan</td>
+                    <td class="tds">0</td>
+                    <td class="tds">0</td>
+                    <td class="tds">1</td>
+                    <td class="tds">1</td>
+                </tr>
+                <tr>
+
+                    <td class="tds"><img src="kabaddi\SouthKorea.png" /><br />South Korea</td>
+                    <td class="tds">0</td>
+                    <td class="tds">0</td>
+                    <td class="tds">1</td>
+                    <td class="tds">1</td>
+                </tr>
+                <tr>
+
+                    <td class="tds"><img src="kabaddi\Thailand.png" /><br />Thailand</td>
+                    <td class="tds">0</td>
+                    <td class="tds">0</td>
+                    <td class="tds">1</td>
+                    <td class="tds">1</td>
+                </tr>
+                <tr>
+                    <td class="tds" colspan="2">Total(7 Nations)</td>
+                    <td class="tds">3</td>
+                    <td class="tds">3</td>
+                    <td class="tds">6</td>
+                    <td class="tds">12</td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="width:100%;height:30%;background-color:white;position:relative;top:20%;">
+            <fieldset class="playerstat"
+                style="width:400px;height:100px;margin-left:3%;border-color:#1d7cf2;position:relative;left:35%;">
+                <legend></legend>
+                <fieldset class="playerstat"
+                    style="width:380px;height:80px;margin-top:8px;margin-left:8px;background-color:#a9a9b0;border-color:#a9a9b0;">
+                    <legend></legend>
+                    <p
+                        style="font-size:50px;color:#000066; text-align:center; margin-top:5px;font-family:'Source Sans Pro', sans-serif;">
+                        <b>IKF RANKINGS</b></p>
+                </fieldset>
+            </fieldset>
+            <br />
+            <table class="t01" border="1px" cellspacing="0px" cellpadding="3px" bgcolor="lightblue"
+                style="background-color:pink;width:90%;height:100%;margin-top:3%;margin-left:5%;text-align:center">
+                <tr>
+                    <th class="ths">Rank</th>
+                    <th class="ths">Team</th>
+                    <th class="ths">Points</th>
+                </tr>
+                <tr>
+                    <td class="tds">1</td>
+                    <td class="tds"><img src="kabaddi\Indian.png" /><br />India</td>
+                    <td class="tds">126</td>
+                </tr>
+                <tr>
+                    <td class="tds">2</td>
+                    <td class="tds"><img src="kabaddi\Iran.png" /><br />Iran</td>
+                    <td class="tds">90</td>
+                </tr>
+                <tr>
+                    <td class="tds">3</td>
+                    <td class="tds"><img src="kabaddi\SouthKorea.png" /><br />South Korea</td>
+                    <td class="tds">83</td>
+                </tr>
+                <tr>
+                    <td class="tds">4</td>
+                    <td class="tds"><img src="kabaddi\Thailand.png" /><br />Thailand</td>
+                    <td class="tds">81</td>
+                </tr>
+                <tr>
+                    <td class="tds">5</td>
+                    <td class="tds"><img src="kabaddi\Nepal.png" /><br />Nepal</td>
+                    <td class="tds">81</td>
+                </tr>
+                <tr>
+                    <td class="tds">6</td>
+                    <td class="tds"><img src="kabaddi\Kenya.png" /><br />Kenya</td>
+                    <td class="tds">75</td>
+                </tr>
+                <tr>
+                    <td class="tds">7</td>
+                    <td class="tds"><img src="kabaddi\Poland.png" /><br />Poland</td>
+                    <td class="tds">60</td>
+                </tr>
+                <tr>
+                    <td class="tds">8</td>
+                    <td class="tds"><img src="kabaddi\England.png" /><br />England</td>
+                    <td class="tds">59</td>
+                </tr>
+                <tr>
+                    <td class="tds">9</td>
+                    <td class="tds"><img src="kabaddi\US.png" /><br />United States</td>
+                    <td class="tds">51</td>
+                </tr>
+                <tr>
+                    <td class="tds">10</td>
+                    <td class="tds"><img src="kabaddi\Japan.png" /><br />Japan</td>
+                    <td class="tds">47</td>
+                </tr>
+                <tr>
+                    <td class="tds">11</td>
+                    <td class="tds"><img src="kabaddi\Argentina.png" /><br />Argentina</td>
+                    <td class="tds">45</td>
+                </tr>
+                <tr>
+                    <td class="tds">12</td>
+                    <td class="tds"><img src="kabaddi\Australia.png" /><br />Australia</td>
+                    <td class="tds">10</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <br />
+    <hr style="margin-left:2%;margin-right:2%; color:black;margin-top:35%;" />
+    <div style=" background-color:white; width:95%; margin-left:-2%;margin-top:6%; margin-bottom:1%; height:200px;">
+        <span
+            style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:black; position:relative; left:15%; top:-2.5%">Sanctioned
+            By</span>
+        <span
+            style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:black; position:relative; left:36%; top:-2.5%;">Managed
+            By</span>
+        <p
+            style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:black; position:relative; left:80%; top:-22%">
+            Broadcast Partners</p>
+        <img class="hov" src="kabaddi\AKF.png" style="position:relative; left:8%;top:5%;">
+        <img class="hov" src="kabaddi\COI.png" style="position:relative; left:11%;top:5%;">
+        <img class="hov" src="kabaddi\IKF.png" style="position:relative; left:14%;top:5%;">
+        <img class="hov" src="kabaddi\mashal.png" style="position:relative; left:26%;top:5%;">
+        <img class="hov" src="kabaddi\star.png" style="position:relative; left:48%;top:5%;">
+    </div>
+    <div id="end">
+        <hr />
+        <a style="color:#3B5998;" href="#" id="facebook" class="fa fa-facebook socialmedia"></a>
+        <a style="color:#55ACEE;" id="twitter" class="socialmedia fa fa-twitter" href="#"></a>
+        <a style="color:#dd4b39;" id="google" class="socialmedia fa fa-google" href="#"></a>
+        <a style="color:#007bb5;" id="linked" class="socialmedia fa fa-linkedin" href="#"></a>
+        <a style="color:#bb0000;" id="youtube" class="socialmedia fa fa-youtube" href="#"></a>
+        <a style="color:#125688;" id="insta" class="socialmedia fa fa-instagram" href="#"></a>
+        <div id="about">
+            <pre
+                style="line-height: 40px"><span style="position: relative; left:400px;font-size:20px; word-spacing: 12px ;color:#000066">ABOUT  ARCHIVE  PRIVACY  TERMS  CONTACT</span>
+        <span style="position: relative; left:365px;font-size:20px; color:#0000dd">  Watchr Media  Cassius Network  All rights reserved</span></pre>
+        </div>
+    </div>
+</body>

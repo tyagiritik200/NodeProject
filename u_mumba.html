@@ -1,0 +1,332 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>U Mumba</title>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="CSS/navigation.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<style>
+#navbar
+{
+right:380px;
+}
+ #headbar
+ {
+ position:fixed;
+ background-color:black;
+ right:0%;
+ width:100%;
+ top:0px;
+ height:100px;
+ z-index:1100;
+ }
+ .hov:hover
+ {
+ transform:scale(1.1);
+ }
+ #defend
+{
+	position:relative;
+	width:70%;
+	height:580px;
+	background-color:white;
+	top:50px;
+	left:15%;
+	z-index:-10;
+}
+#navbar ul li
+{
+background-color:#FF5722;
+color:black;
+}
+#navbar ul li:hover
+{
+background-color:white;
+}
+.search_box
+{
+background-color:#2f3640;
+}
+.btn
+{
+color:#ff5722;
+background-color:#2f3640;
+border:none;
+cursor:pointer;
+}
+.search_box:hover .btn
+{
+background-color:white;
+}
+.icon
+{
+color:#ff5722;
+}
+.profile ul li
+{
+color:black;
+background-color:white;
+}
+#1stdiv
+{
+ color:yellow;
+ width:100%;
+ }
+ .th
+ {
+ color:#ff5722;
+ font-size:25px;
+font-family:sans-serif,light-weight;
+ }
+ .td
+ {
+ font-family:sans-serif,light-weight;
+ color:white;
+ font-size:20px;
+ }
+ .field
+ {
+ border-color:#ff5722;
+ border-radius:15px;
+ background-color:white; 
+ height:200px; 
+ width:200px;
+ background: repeating-linear-gradient(
+  45deg,
+  #e0e0e0,
+  #e0e0e0 2px,
+  white 2px,
+  white 20px
+);
+ }
+</style>
+<script>
+    var bleep1=new Audio();
+    bleep1.src="tick3.mp3";
+</script>
+</head>
+<body bgcolor="black">
+<%
+		response.setHeader("Cache-Control", "no-cache ,no-store ,must-revalidate ");
+		response.setHeader("Expires","0");
+		if(session.getAttribute("username")==null)
+			response.sendRedirect("LOGIN.jsp");
+%>
+<div style="position:fixed; top:0%; left:0%;height:100px;width:220px;background-color:black;z-index:1200;">
+ <img src="kabaddi/u-mumba2.png" width="100%" height="100%" alt="logo"/>
+</div>
+<div id="headbar">
+<div id="navbar">
+<ul>
+<li onmouseover="bleep1.play()"><a href="MainPage.html" style="text-decoration:none;color:black">Home</a></li>
+<li onmouseover="bleep1.play()"><a href="MainPage.html#bookmark1" style="text-decoration:none;color:black">Players</a></li>
+<li onmouseover="bleep1.play()"><a href="MainPage.html#bookmark2" style="text-decoration:none;color:black">Teams</a></li>
+<li onmouseover="bleep1.play()"><a href="MainPage.html" style="text-decoration:none;color:black">Tournaments</a></li>
+</ul>
+</div>
+<div class="search_box">
+<form action="searchResults.jsp" action="post">
+<input class="input_box" type="search" name="plname" placeholder="Search" autocomplete="off" required/>
+<button class=" btn" style="position:relative;">
+<i class="fa fa-search"></i>
+</form>
+</div>
+<div class="profile">
+<a class="icon" href="">
+<i class="fa fa-user"></i>
+</a>
+<ul>
+<li><a href="ViewProfile.jsp" style="color:black;text-decoration:none;">View Profile</a></li>
+<li><a href="ChangePass.jsp" style="color:black;text-decoration:none;">Change Password</a></li>
+<li><form action="Logout">
+    <input type="submit" value="Logout" style="border:none;font-size:16px;cursor: pointer;color:black;width:120px;background-color:white;margin-top:2px;line-height:40px;text-align:center;font-size:16px;border-radius:20px;">
+    </form>
+</li>
+</ul>
+</div>
+</div>
+<div id="defend">
+<img src="kabaddi\uteam.png" alt="kabaddi" width="100%" height="100%">
+</div>
+<div id="1stdiv" style=" background-color:black; width:95%; margin-left:2%; margin-top:13%; margin-bottom:1%; height:400px;">
+<div id="league" style=" background-color:black; width:40%; margin-left:2%; margin-top:1%; height:400px;">
+<img src="kabaddi\ronit.png" alt="kabaddi" width="100%" height="100%">
+</div>
+<div id="1stwrite" style=" background-color:black; width:45%; float:right; margin-right:2%; margin-top:-27.7%; height:400px;">
+<table style="border-color:red;border-width:5px; background-color:black;width:100%;height:100%;">
+<tr>
+<td class="th">Team Owner</td>
+<td class="td">Unilazer Sports(Ronit Screwvala)</td>
+</tr>
+<tr>
+<td class="th">Team Captain</td>
+<td class="td">Fazel Atrachali</td>
+</tr>
+<tr>
+<td class="th">Team Coach</td>
+<td class="td">Gholamreza Mahmoud Mazandarani</td>
+</tr>
+<tr>
+<td class="th">Home Ground</td>
+<td class="td">DOME@NSCI SVP Stadium, Mumbai</td>
+</tr>
+<tr>
+<td class="th">Founded</td>
+<td class="td">2014</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="1stdiv" style=" background-color:black; width:95%; margin-left:2%; margin-top:10%; margin-bottom:1%; height:900px;">
+<h2 class="th" style="font-size:30px ;margin-left:2%;">ABOUT</h2>
+<br/>
+<hr style="margin-left:2%;margin-right:2%;"/>
+<br/>
+<p style="color:white;font-size:25px;font-family:'Source Sans Pro', sans-serif;margin-left:2%;text-align:justify;margin-right:2%;line-height:1.5;">U Mumba is the Mumbai city franchise of the Pro Kabaddi League.
+Derived from the word Mumba, the name represents the mother island that gave birth to our mega city which is now known as Mumbai.
+We the citizens make the city what it is, therefore the name U Mumba. The team chose orange as it's primary colour for their jersey because fisher folks of the region use this as their primary identifiable colour, this personifies the fact that in the deep blue ocean orange stands out as a clutter breaker... that is U Mumba for the rest of the world.
+</p>
+<br/>
+<h2 class="th" style="font-size:25px ;margin-left:2%;">Background</h2>
+<br/>
+<p style="color:white;font-size:25px;font-family:'Source Sans Pro', sans-serif;margin-left:2%;text-align:justify;margin-right:2%;line-height:1.5;">
+U Mumba is owned by Unilazer Sports, which is a company run by Ronnie Screwvala, the founder of  UTV Group. U Sports spans its reaches not only to Kabaddi but to Football, ESports and Motorsports. 
+Their future plans include constructing an U Mumba arena, reaching out to top metropolitan cities in India and building a U Mumba residential Academy in the name of U Mumba Gurukul.
+</p>
+<br/>
+<h2 class="th" style="font-size:25px ;margin-left:2%;">Brief History: Season 1 to 6</h2>
+<br/>
+<p style="color:white;font-size:25px;font-family:'Source Sans Pro', sans-serif;margin-left:2%;text-align:justify;margin-right:2%; line-height:1.5;">
+The team was led by Captain Anup Kumar for all 5 seasons, coached by Bhaskaran Edacherry and Ravi Shetty.
+<br/>In season 1, the team finished Runners-Up, losing out to eventual champions Jaipur Pink Panthers in a closely fought finale.
+<br/>In season 2, U Mumba consistently topped the table during the league stage and beat Bengaluru Bulls in a thrilling finale to be crowned Star Sports Pro Kabaddi League 2015 Champions.
+<br/>In season 3, U Mumba topped the table again during the league stage to qualify for the semi-finals. In the semi-finals, U Mumba beat Bengal Warriors to qualify for their third successive final. Up against the Patna Pirates, U Mumba lost.
+<br/>In season 4, U Mumba stood 5th on the table, unable to make it to the Playoffs.
+<br/>In season 5, U Mumba finished 8th on the team performance table.
+<br/>In 2018, season 6 the team has been reimagined and recreated from a scratch. We now have a new set of coaches namely Gholamreza Mahmoud Mazandarani and Upendra Kumar. The idea was to focus on a young dynamic squad with a good mix of youth and experience.
+ The team will comprise of an experienced defensive (corners and covers) line up with a young offence (raiders) unit.
+</p>
+</div>
+<div  style=" background-color:black; width:95%; margin-left:2%; margin-top:10%; margin-bottom:1%; height:1000px;">
+<h2 class="th" style="font-size:30px ;margin-left:2%;">STATS: All Seasons</h2>
+<br/>
+<hr style="margin-left:2%;margin-right:2%;"/>
+<br/>
+<table style="margin-left:5%; margin-right:2%; width:100%; margin-top:5%;">
+<tr>
+<td> 
+<fieldset class="field"><legend class="th" style="font-size:30px; text-align:center; color:#ff5722;"><b>MATCHES</b></legend>
+<p style="font-size:60px;color:#ff6600; text-align:center; margin-top:35px;font-family:'Source Sans Pro', sans-serif;" ><b>107</b></p>
+</fieldset>
+</td>
+<td> 
+<fieldset class="field"><legend class="th" style="font-size:30px; text-align:center; color:#ff5722;"><b>WINS</b></legend>
+<p style="font-size:60px;color:#ff6600; text-align:center; margin-top:35px;font-family:'Source Sans Pro', sans-serif;" ><b>68</b></p>
+</fieldset>
+</td>
+<td> 
+<fieldset class="field"><legend class="th" style="font-size:30px; text-align:center; color:#ff5722;"><b>LOSSES</b></legend>
+<p style="font-size:60px;color:#ff6600; text-align:center; margin-top:35px;font-family:'Source Sans Pro', sans-serif;" ><b>33</b></p>
+</fieldset>
+</td>
+<td> 
+<fieldset class="field"><legend class="th" style="font-size:30px; text-align:center; color:#ff5722;"><b>DRAWS</b></legend>
+<p style="font-size:60px;color:#ff6600; text-align:center; margin-top:35px;font-family:'Source Sans Pro', sans-serif;" ><b>6</b></p>
+</fieldset>
+</td>
+</tr>
+</table>
+<table style="margin-left:5%; margin-right:2%; width:100%; margin-top:7%; height:20%;">
+<tr>
+<td><p style="font-weight:bold; font-size:70px;font-family:'Source Sans Pro', sans-serif;position:relative; left:6%;color:#ff6e41;">4541</p></td>
+<td><p style="font-weight:bold; font-size:50px;font-family:'Source Sans Pro', sans-serif;position:relative; right:10%;color:#5aff54;">1545</p></td>
+<td><p style="font-weight:bold; font-size:50px;font-family:'Source Sans Pro', sans-serif;position:relative; right:-3%;color:indianred;">973</p></td>
+<td><p style="font-weight:bold; font-size:50px;font-family:'Source Sans Pro', sans-serif;position:relative; left:-20%;color:#7fb7ff;">2023</p></td>
+</tr>
+<tr>
+<td><p style="font-weight:bold; font-size:40px;font-family:'Source Sans Pro', sans-serif;position:relative; left:3%; color:orangered;">Total Raids</p></td>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;position:relative; right:43%;text-align:center; color:orangered;">Successful<br/>Raids</p></td>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;position:relative; right:35%;text-align:center; color:orangered;">Unsuccessful<br/>Raids</p></td>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;position:relative; left:-50%;text-align:center; color:orangered;">Empty<br/>Raids</p></td>
+</tr>
+</table>
+<table style="margin-left:5%; margin-right:2%; width:100%; margin-top:7%; height:20%;">
+<tr>
+<td><p style="font-weight:bold; font-size:70px;font-family:'Source Sans Pro', sans-serif;position:relative; left:6%;color:#ff6e41;">2492</p></td>
+<td><p style="font-weight:bold; font-size:50px;font-family:'Source Sans Pro', sans-serif;position:relative; right:25%;color:#5aff54;">1048</p></td>
+<td><p style="font-weight:bold; font-size:50px;font-family:'Source Sans Pro', sans-serif;position:relative; right:8%;color:indianred;">1444</p></td>
+<td><p style="font-weight:bold; font-size:50px;font-family:'Source Sans Pro', sans-serif;position:relative; left:-25%;color:#e11aff;">86</p></td>
+</tr>
+<tr>
+<td><p style="font-weight:bold; font-size:40px;font-family:'Source Sans Pro', sans-serif;position:relative; left:-1%; color:orangered;">Total Tackles</p></td>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;position:relative; right:58%;text-align:center; color:orangered;">Successful<br/>Tackles</p></td>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;position:relative; right:45%;text-align:center; color:orangered;">Unsuccessful<br/>Tackles</p></td>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;position:relative; left:-60%;text-align:center; color:orangered;">Super<br/>Tackles</p></td>
+</tr>
+</table>
+<br/><br/>
+<hr style="margin-left:2%;margin-right:2%;"/>
+</div>
+<div  style=" background-color:black; width:95%; margin-left:2%; margin-top:2%; margin-bottom:1%; height:400px;">
+<h2 class="th" style="font-size:45px ;margin-left:35%; margin-top:8%;font-weight:bold">Players In Focus</h2>
+<br/>
+<table style="margin-left:0%;width:100%; margin-top:5%; height:20%;">
+<tr>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;color:white;text-align:center;margin-left:-25%;">TOP RAIDER</p></td>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;color:white; text-align:center;margin-left:-25%;">TOP DEFENDER</p></td>
+<td><p style="font-weight:bold; font-size:30px;font-family:'Source Sans Pro', sans-serif;color:white;text-align:center;margin-left:-25%;">TOP ALL ROUNDER</p></td>
+</tr>
+<tr>
+<td><a href="Siddharth.html"><img class="hov" src="kabaddi\Sid2.png"  style="text-align:center; width:70%; height:70%;"></a></td>
+<td><a href="Fazel.html"><img class="hov" src="kabaddi\Fazel.png" style="text-align:center; width:70%; height:70%;"></a></td>
+<td><a href="Subash.html"><img class="hov" src="kabaddi\Subash.png" style="text-align:center; width:70%; height:70%;"></a></td>
+</tr>
+<tr>
+<td><a href="Siddharth.html" style="text-decoration:none;"><p style="font-size:40px;font-family:'Source Sans Pro', sans-serif;color:white;text-align:center;margin-left:-25%;"><b>Siddharth</b><br/>Sirish Desai</p></a></td>
+<td><a href="Fazel.html" style="text-decoration:none;"><p style="font-size:40px;font-family:'Source Sans Pro', sans-serif;color:white; text-align:center;margin-left:-25%;"><b>Fazel</b><br/>Atrachali </p></a></td>
+<td><a href="Subash.html" style="text-decoration:none;"><p style="font-size:40px;font-family:'Source Sans Pro', sans-serif;color:white;text-align:center;margin-left:-25%;"><b>E.</b><br/>Subash</p></a></td>
+</tr>
+<tr>
+<td><hr style="margin-left:2%;margin-right:25%;"/></td>
+<td><hr style="margin-left:2%;margin-right:25%;"/></td>
+<td><hr style="margin-left:2%;margin-right:25%;"/></td>
+</tr>
+<tr>
+<td><p style="font-size:25px;font-family:'Source Sans Pro', sans-serif;color:white;text-align:center;margin-left:-25%;">Raid Points &nbsp &nbsp<b style="font-size:40px">218</b> </p></td>
+<td><p style="font-size:25px;font-family:'Source Sans Pro', sans-serif;color:white; text-align:center;margin-left:-25%;">Tackle Points &nbsp &nbsp<b style="font-size:40px">83</b></p></td>
+<td><p style="font-size:25px;font-family:'Source Sans Pro', sans-serif;color:white;text-align:center;margin-left:-25%;">Total Points &nbsp &nbsp<b style="font-size:40px">3</b></p></td>
+</tr>
+</table>
+</div>
+<br/>
+<hr style="color:white; width:85%; position:relative; left:6%; margin-top:25%;"/>
+<div  style=" background-color:black; width:95%; margin-left:-2%;margin-top:6%; margin-bottom:1%; height:200px;">
+<span style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:white; position:relative; left:15%; top:-2.5%">Sanctioned By</span>
+<span style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:white; position:relative; left:36.5%; top:-2.5%;">Managed By</span>
+<p style="font-family: 'Source Sans Pro', sans-serif;font-size:35px; color:white; position:relative; left:78%; top:-22%">Broadcast Partners</p>
+<img class="hov" src="kabaddi\AKF.png" style="position:relative; left:8%;top:5%;">
+<img class="hov" src="kabaddi\COI.png" style="position:relative; left:11%;top:5%;">
+<img class="hov" src="kabaddi\IKF.png" style="position:relative; left:14%;top:5%;">
+<img class="hov" src="kabaddi\mashal.png" style="position:relative; left:26%;top:5%;">
+<img class="hov" src="kabaddi\star.png" style="position:relative; left:45%;top:5%;">
+</div>
+<div id="end">
+<hr/>
+<a href="#" id="facebook" class="fa fa-facebook socialmedia" ></a>
+<a id="twitter" class="socialmedia fa fa-twitter" href="#" ></a>
+<a id="google" class="socialmedia fa fa-google" href="#"  ></a>
+<a id="linked" class="socialmedia fa fa-linkedin" href="#"></a>
+<a id="youtube" class="socialmedia fa fa-youtube" href="#" ></a>
+<a id="insta" class="socialmedia fa fa-instagram" href="#"></a> 
+<div id="about">
+<pre style="line-height: 40px"><span style="position: relative; left:384px;font-size:20px; word-spacing: 12px ;color: dodgerblue">ABOUT  ARCHIVE  PRIVACY  TERMS  CONTACT</span>
+<span style="position: relative; left:350px;font-size:20px; color:white">  Watchr Media  Cassius Network  All rights reserved</span></pre>
+</div>
+</div>
+</body>
+</html>

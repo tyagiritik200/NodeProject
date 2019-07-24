@@ -1,0 +1,91 @@
+#pointstable
+{
+    position: relative;
+    top:-200px;
+    left:310px;
+}
+#head
+{
+    position: relative;
+    top:-10px;
+    text-align: center;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: #38003c;
+}
+#images
+{
+    text-align: center;
+}
+#info
+{
+    position: relative;
+    top:8px;
+    font-family: Georgia;
+    text-align: center;
+    font-size: 20px;
+}
+#image:hover
+{
+    transform: scale(1.1);
+}
+#stats
+{
+    position: relative;
+    top:10px;
+    color: #38003c;
+    font-size:25px;
+    text-align: center;
+}
+.socialmedia.fa
+{
+    position: relative;
+    padding: 10px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    left:450px;
+    text-decoration: none;
+    color: white;
+    margin: 0px;
+}
+#end
+{
+    position: relative;
+    background: black;
+    top:0px;
+    width:100%;
+    height:30%;
+}
+#facebook:hover
+{
+    color: #3B5998;
+}
+#twitter:hover
+{
+    color: #55ACEE;
+}
+#google:hover
+{
+    color: #dd4b39;
+}
+#linked:hover
+{
+    color: #007bb5;
+}
+#youtube:hover
+{
+    color:  #bb0000;
+}
+#insta:hover
+{
+    color: #125688;
+}
+#wins
+{
+    position: relative;
+    top:0px;
+    color: #38003c;
+    font-size:38px;
+    text-align: center;
+}
