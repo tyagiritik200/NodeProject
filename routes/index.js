@@ -23,7 +23,7 @@ var loggedin = function (req, res, next) {
 }
 
 //var ph=path.join(__dirname,"../","Homepage.html");
-router.get('/', (req, res, next) => res.render("HomePage"));
+router.get('/', (req, res, next) => res.render("Homepage"));
 
 //Login Page
 //var pl=path.join(__dirname,"../","Login.html");
