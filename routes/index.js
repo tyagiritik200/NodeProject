@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const router = express.Router();
 var path = require("path");
@@ -279,8 +280,8 @@ router.post('/forgot', function (req, res, next) {
                 service: 'Gmail',
                 auth: {
                     type: "login",
-                    user: "the12thman200@gmail.com",
-                    pass: "brahmprakash1"
+                    user: process.env.EMAIL,
+                    pass: process.env.PASSWORD
                 }
             });
             var mailOptions = {
@@ -354,8 +355,8 @@ router.post('/reset/:token', function (req, res) {
             var smtpTransport = nodemailer.createTransport({
                 service: 'Gmail',
                 auth: {
-                    user: "the12thman200@gmail.com",
-                    pass: "brahmprakash1"
+                    user: process.env.EMAIL,
+                    pass: process.env.PASSWORD
                 }
             });
             var mailOptions = {
